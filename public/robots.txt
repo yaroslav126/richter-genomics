@@ -1,0 +1,68 @@
+# =====================================================================
+# Anti-AI Crawler Directives & Content Protection Policy
+# TDM Reservation Notice: Directive (EU) 2019/790, Article 4(3)
+# Human Creator & Contact: @Slava_Dev_bot (https://t.me/Slava_Dev_bot)
+# =====================================================================
+
+# OpenAI Bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+# Anthropic Bots
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Common Crawl (Mass Training Scraping)
+User-agent: CCBot
+Disallow: /
+
+# Google AI Training
+User-agent: Google-Extended
+Disallow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# ByteDance / TikTok AI
+User-agent: Bytespider
+Disallow: /
+
+# Cohere AI
+User-agent: Cohere-ai
+Disallow: /
+
+# Meta / Facebook AI
+User-agent: FacebookBot
+Disallow: /
+
+# Diffbot AI
+User-agent: Diffbot
+Disallow: /
+
+# Omgili / Webz AI
+User-agent: Omgilibot
+Disallow: /
+
+# Scrapy & Generic Harvesters
+User-agent: Scrapy
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+# General Policy
+User-agent: *
+Disallow: 
+# NOTICE: Commercial scraping, data mining, ingestion for Large Language Models (LLM) training,
+# synthetic reproduction, and unauthorized automated retrieval are strictly prohibited.
+# For legitimate commercial requests, contact via Telegram: https://t.me/Slava_Dev_bot
