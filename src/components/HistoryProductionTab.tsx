@@ -190,8 +190,6 @@ export const HistoryProductionTab: React.FC<HistoryProductionTabProps> = ({
             <span>Sole Contact: <a href="https://t.me/Slava_Dev_bot" target="_blank" rel="noopener noreferrer" className="underline font-bold">@Slava_Dev_bot</a></span>
             <span>·</span>
             <span>Response in 24 hours</span>
-            <span>·</span>
-            <span className="bg-teal-50 border border-teal-200 px-2 py-0.5 rounded text-[11px]">🛡️ Anti-AI Protected</span>
           </div>
         </div>
 

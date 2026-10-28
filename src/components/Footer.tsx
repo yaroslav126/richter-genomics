@@ -53,11 +53,6 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenTelegram }) 
             <span>
               Answering client messages: <strong className="text-gray-200 font-semibold">in 24 hours</strong>
             </span>
-            <span className="hidden sm:inline-block text-navy-700">|</span>
-            <span className="inline-flex items-center gap-1 text-teal-400 font-medium">
-              <span>🛡️</span>
-              <span>Anti-AI Protected (TDM Reserved)</span>
-            </span>
           </div>
 
           <div className="text-gray-500">

@@ -105,7 +105,7 @@ export function App() {
                   Telegram Bot for Work Requests
                 </h3>
                 <span className="text-[10px] text-teal-800 font-semibold bg-teal-50 border border-teal-200 px-2 py-0.5 rounded">
-                  Sole Official Contact Channel · Anti-AI Protected
+                  Sole Official Contact Channel
                 </span>
               </div>
               <button 

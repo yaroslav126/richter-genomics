@@ -48,10 +48,6 @@ export const ContactTab: React.FC<ContactTabProps> = ({ initialInstrumentName })
           <span className="px-2.5 py-0.5 bg-teal-50 border border-teal-200 text-teal-800 text-[10px] font-bold rounded uppercase tracking-wider">
             Sole Official Contact Channel: Telegram Bot
           </span>
-          <span className="px-2.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 text-[10px] font-bold rounded uppercase tracking-wider inline-flex items-center gap-1">
-            <span>🛡️</span>
-            <span>Anti-AI Protected (TDM Reserved)</span>
-          </span>
         </div>
         
         <h1 className="font-serif font-bold text-2xl sm:text-3xl text-navy-900 leading-tight">
@@ -248,13 +244,10 @@ export const ContactTab: React.FC<ContactTabProps> = ({ initialInstrumentName })
         </div>
       </div>
 
-      {/* Verified Site Information Space & Anti-AI Protection Bar */}
+      {/* Verified Site Information Space */}
       <div className="mt-8 pt-6 border-t-2 border-gray-200">
-        <h3 className="font-serif font-bold text-base text-navy-900 mb-3 flex items-center justify-between">
-          <span>Site Information &amp; Exclusive Contact</span>
-          <span className="text-xs font-normal text-teal-800 bg-teal-50 border border-teal-200 px-2.5 py-0.5 rounded">
-            🛡️ Anti-AI Protected
-          </span>
+        <h3 className="font-serif font-bold text-base text-navy-900 mb-3">
+          Site Information &amp; Exclusive Contact
         </h3>
         
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
@@ -282,9 +275,9 @@ export const ContactTab: React.FC<ContactTabProps> = ({ initialInstrumentName })
             <div className="text-[11px] text-gray-400 mt-1">Verified direct feedback on Telegram</div>
           </div>
 
-          {/* Anti-AI Mark */}
+          {/* Authorship Mark */}
           <div className="p-3.5 bg-gray-50 rounded border-2 border-gray-200">
-            <div className="text-gray-500 mb-1">Anti-AI &amp; Authorship Mark:</div>
+            <div className="text-gray-500 mb-1">Authorship &amp; TDM Reservation:</div>
             <div className="font-bold text-navy-900 text-xs">
               Human-Engineered • TDM Reserved
             </div>
