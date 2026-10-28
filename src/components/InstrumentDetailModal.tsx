@@ -117,7 +117,7 @@ export const InstrumentDetailModal: React.FC<InstrumentDetailModalProps> = ({
           {/* Lead time notice */}
           <div className="bg-gray-50 border border-gray-200 rounded p-3 text-xs text-gray-600 flex justify-between items-center">
             <span>Production Lead Time: <strong className="text-navy-900">{instrument.leadTime}</strong></span>
-            <span>Site: <strong className="text-navy-900">{instrument.fabricationSite}</strong></span>
+            <span>Standard: <strong className="text-navy-900">{instrument.fabricationSite}</strong></span>
           </div>
         </div>
 

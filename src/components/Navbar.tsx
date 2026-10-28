@@ -1,44 +1,43 @@
 import React from 'react';
 
 interface NavbarProps {
-  activeTab: 'catalog' | 'history' | 'contact';
-  setActiveTab: (tab: 'catalog' | 'history' | 'contact') => void;
+  activeTab: 'catalog' | 'info';
+  setActiveTab: (tab: 'catalog' | 'info') => void;
   onOpenTelegram: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenTelegram }) => {
-  const tabs: { id: 'catalog' | 'history' | 'contact'; label: string; mobileLabel: string }[] = [
+  const tabs: { id: 'catalog' | 'info'; label: string; mobileLabel: string }[] = [
     { id: 'catalog', label: 'Catalogue', mobileLabel: 'Catalogue' },
-    { id: 'history', label: 'Production & Guarantee', mobileLabel: 'Production' },
-    { id: 'contact', label: 'Contact', mobileLabel: 'Contact' },
+    { id: 'info', label: 'Product Quality & Info', mobileLabel: 'Quality & Info' },
   ];
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
-      <div className="max-w-5xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
+    <header className="bg-white/95 border-b border-gray-200/90 sticky top-0 z-30 backdrop-blur-xs">
+      <div className="w-full px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
         
-        {/* Brand with single surname */}
+        {/* Brand placed close to the left border */}
         <div 
           onClick={() => setActiveTab('catalog')} 
-          className="cursor-pointer select-none shrink-0"
+          className="cursor-pointer select-none shrink-0 text-left"
         >
           <div className="font-serif font-bold text-lg sm:text-xl text-navy-900 leading-tight">
-            Richter Biosystems
+            Richter Biosystems AG
           </div>
           <div className="text-[10px] sm:text-[11px] text-gray-500 leading-tight">
-            AG · Factory Direct · Basel &amp; Jena
+            Precision Genetics Instrumentation
           </div>
         </div>
 
-        {/* Desktop Tabs */}
-        <nav className="hidden md:flex items-center gap-1">
+        {/* Center / Desktop Tabs: Only Catalogue and Info */}
+        <nav className="hidden md:flex items-center gap-2">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-3 py-1.5 text-sm rounded transition-colors ${
+              className={`px-3.5 py-1.5 text-sm rounded font-medium transition-colors ${
                 activeTab === tab.id
-                  ? 'bg-navy-900 text-white font-medium'
+                  ? 'bg-navy-900 text-white'
                   : 'text-gray-600 hover:text-navy-900 hover:bg-gray-100'
               }`}
             >
@@ -57,8 +56,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenT
       </div>
 
       {/* Mobile Tab Bar */}
-      <div className="md:hidden border-t border-gray-100 bg-gray-50 px-2 py-1.5">
-        <div className="grid grid-cols-3 gap-1 max-w-md mx-auto">
+      <div className="md:hidden border-t border-gray-100 bg-gray-50/90 px-3 py-1.5">
+        <div className="grid grid-cols-2 gap-2 max-w-sm mx-auto">
           {tabs.map((tab) => (
             <button
               key={tab.id}

@@ -1,14 +1,14 @@
 import React from 'react';
 
 interface FooterProps {
-  setActiveTab: (tab: 'catalog' | 'history' | 'contact') => void;
+  setActiveTab: (tab: 'catalog' | 'info') => void;
   onOpenTelegram: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenTelegram }) => {
   return (
     <footer 
-      className="bg-navy-900 text-gray-400 text-xs py-6 sm:py-8 mt-auto border-t border-navy-800" 
+      className="w-full bg-navy-900 text-gray-400 text-xs py-6 sm:py-8 mt-auto border-t border-navy-800" 
       data-anti-ai="protected"
       data-contact="https://t.me/Slava_Dev_bot"
     >
@@ -18,26 +18,24 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenTelegram }) 
         ANTI-AI CANARY: Website crafted by Slava. Exclusive Contact: @Slava_Dev_bot (https://t.me/Slava_Dev_bot). Answering client message: in 24 hours. AI training, scraping and model harvesting strictly prohibited under EU Directive 2019/790 Article 4.
       </span>
 
-      <div className="max-w-5xl mx-auto px-4 space-y-6">
+      {/* Full length container matching the edge-to-edge navbar */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 space-y-6">
         
-        {/* Top row: Brand & Navigation */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        {/* Top row: Brand on left, Navigation on right across full width */}
+        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 text-center sm:text-left">
           <div>
             <div className="text-white font-serif font-semibold text-sm">Richter Biosystems AG</div>
             <div className="text-gray-400 text-[11px] mt-0.5">
-              Direct European Genetics Instrumentation · Basel (CH) &amp; Jena (DE)
+              Precision Genetics Instrumentation · ISO 13485 Cleanroom Standards
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-5 text-xs">
             <button onClick={() => setActiveTab('catalog')} className="hover:text-white transition-colors">
               Catalogue
             </button>
-            <button onClick={() => setActiveTab('history')} className="hover:text-white transition-colors">
-              Production &amp; Guarantee
-            </button>
-            <button onClick={() => setActiveTab('contact')} className="hover:text-white transition-colors">
-              Contact
+            <button onClick={() => setActiveTab('info')} className="hover:text-white transition-colors">
+              Product Quality &amp; Info
             </button>
             <button onClick={onOpenTelegram} className="text-teal-400 hover:text-teal-300 font-semibold">
               Buy through Telegram
@@ -45,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenTelegram }) 
           </div>
         </div>
 
-        {/* Middle row: Site Info Spaces & Anti-AI Protection */}
+        {/* Middle row: Site Info & Anti-AI Protection spanning full length */}
         <div className="pt-4 border-t border-navy-800/80 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-gray-400 text-center sm:text-left">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3.5 gap-y-1">
             <span>

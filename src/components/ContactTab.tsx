@@ -297,7 +297,7 @@ export const ContactTab: React.FC<ContactTabProps> = ({ initialInstrumentName })
         {/* Manufacturing Sites info */}
         <div className="mt-4 p-3.5 bg-white rounded border border-gray-200 text-xs text-gray-600 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
           <div>
-            <strong className="text-navy-900">European Assembly Sites:</strong> Basel Fab (Switzerland) &amp; Jena Fab (Germany)
+            <strong className="text-navy-900">Manufacturing Standards:</strong> ISO 13485 Certified Cleanroom Assembly
           </div>
           <div>
             Exclusive contact channel: <a href="https://t.me/Slava_Dev_bot" target="_blank" rel="noopener noreferrer" className="text-teal-700 font-semibold underline">@Slava_Dev_bot (Telegram)</a>

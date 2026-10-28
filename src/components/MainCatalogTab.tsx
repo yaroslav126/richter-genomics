@@ -53,20 +53,11 @@ export const MainCatalogTab: React.FC<MainCatalogTabProps> = ({
       
       {/* Page header */}
       <div className="mb-8">
-        <div className="flex flex-wrap items-center gap-2 mb-2">
-          <span className="px-2.5 py-0.5 bg-teal-50 border border-teal-200 text-teal-800 text-[10px] font-bold rounded uppercase tracking-wider">
-            European Factory Direct Catalog
-          </span>
-          <span className="px-2.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 text-[10px] font-bold rounded uppercase tracking-wider">
-            Basel (CH) &amp; Jena (DE)
-          </span>
-        </div>
-
         <h1 className="font-serif font-bold text-2xl sm:text-3xl text-navy-900 leading-tight">
           Genetics Instrument Catalogue
         </h1>
         <p className="text-sm text-gray-500 mt-1.5 max-w-2xl leading-relaxed">
-          Select a category below to explore available manufacturing positions. Each machine's photography, full technical specifications, and direct procurement channels can be expanded by pressing the instrument's name.
+          Select a category below to explore available instrumentation. Each machine's photography, technical specifications, and procurement channels can be expanded by pressing the instrument's name.
         </p>
       </div>
 
@@ -268,7 +259,7 @@ export const MainCatalogTab: React.FC<MainCatalogTabProps> = ({
                                   loading="lazy"
                                 />
                                 <div className="absolute bottom-2 left-2 bg-black/80 text-white text-[10px] px-2 py-0.5 rounded font-medium">
-                                  European Factory Calibration
+                                  Precision Certified
                                 </div>
                               </div>
 
@@ -335,7 +326,7 @@ export const MainCatalogTab: React.FC<MainCatalogTabProps> = ({
                                   </div>
                                   
                                   <div className="text-[11px] text-gray-500">
-                                    Assembly: <span className="font-medium text-navy-900">{item.fabricationSite}</span> · Lead time: <span className="font-medium text-navy-900">{item.leadTime}</span>
+                                    Standard: <span className="font-medium text-navy-900">{item.fabricationSite}</span> · Lead time: <span className="font-medium text-navy-900">{item.leadTime}</span>
                                   </div>
                                 </div>
 

@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { MainCatalogTab } from './components/MainCatalogTab';
 import { HistoryProductionTab } from './components/HistoryProductionTab';
-import { ContactTab } from './components/ContactTab';
 import { Footer } from './components/Footer';
 import { InstrumentDetailModal } from './components/InstrumentDetailModal';
 import { Instrument } from './data/instruments';
 
 export function App() {
-  const [activeTab, setActiveTab] = useState<'catalog' | 'history' | 'contact'>('catalog');
+  const [activeTab, setActiveTab] = useState<'catalog' | 'info'>('catalog');
   const [selectedInstrument, setSelectedInstrument] = useState<Instrument | null>(null);
   const [inquiryInstrumentName, setInquiryInstrumentName] = useState<string | undefined>(undefined);
   const [isTelegramModalOpen, setIsTelegramModalOpen] = useState<boolean>(false);
@@ -21,22 +20,22 @@ export function App() {
   const handleInquireFromModal = (instrument: Instrument) => {
     setSelectedInstrument(null);
     setInquiryInstrumentName(instrument.name);
-    setActiveTab('contact');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleOpenTelegram = () => {
     setIsTelegramModalOpen(true);
   };
 
-  const handleTabChange = (tab: 'catalog' | 'history' | 'contact') => {
+  const handleOpenTelegram = (instrumentName?: string) => {
+    setInquiryInstrumentName(instrumentName);
+    setIsTelegramModalOpen(true);
+  };
+
+  const handleTabChange = (tab: 'catalog' | 'info') => {
     setActiveTab(tab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div 
-      className="min-h-screen flex flex-col bg-white text-gray-900"
+      className="min-h-screen flex flex-col bg-[#f0f2f5] text-gray-900"
       data-site-author="Slava"
       data-telegram-bot="Slava_Dev_bot"
       data-contact="https://t.me/Slava_Dev_bot"
@@ -45,11 +44,11 @@ export function App() {
       data-tdm-reserved="1"
     >
       
-      {/* Mobile-Adaptive Navbar */}
+      {/* Mobile-Adaptive Navbar with brand close to left border */}
       <Navbar 
         activeTab={activeTab} 
         setActiveTab={handleTabChange} 
-        onOpenTelegram={handleOpenTelegram} 
+        onOpenTelegram={() => handleOpenTelegram()} 
       />
 
       {/* Main Content Area */}
@@ -59,26 +58,21 @@ export function App() {
             onSelectInstrument={handleSelectInstrument}
             onInquire={handleInquireFromModal}
             onOpenTelegram={handleOpenTelegram}
-            onNavigateToHistory={() => handleTabChange('history')}
+            onNavigateToHistory={() => handleTabChange('info')}
           />
         )}
 
-        {activeTab === 'history' && (
+        {activeTab === 'info' && (
           <HistoryProductionTab
             onOpenTelegram={handleOpenTelegram}
-            onNavigateToContact={() => handleTabChange('contact')}
           />
-        )}
-
-        {activeTab === 'contact' && (
-          <ContactTab initialInstrumentName={inquiryInstrumentName} />
         )}
       </main>
 
-      {/* Footer with Site Info Spaces & Anti-AI Protection */}
+      {/* Footer across full length with Site Info & Anti-AI Protection */}
       <Footer 
         setActiveTab={handleTabChange} 
-        onOpenTelegram={handleOpenTelegram} 
+        onOpenTelegram={() => handleOpenTelegram()} 
       />
 
       {/* Instrument specs modal */}
@@ -88,13 +82,14 @@ export function App() {
           onClose={() => setSelectedInstrument(null)}
           onInquire={handleInquireFromModal}
           onOpenTelegram={() => {
+            const name = selectedInstrument.name;
             setSelectedInstrument(null);
-            handleOpenTelegram();
+            handleOpenTelegram(name);
           }}
         />
       )}
 
-      {/* Telegram Work Requests & Purchase Modal — Sole Contact Channel */}
+      {/* Telegram Work Requests & Purchase Modal — Sole Official Contact Channel */}
       {isTelegramModalOpen && (
         <div 
           className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/60 backdrop-blur-xs"
@@ -122,8 +117,14 @@ export function App() {
               </button>
             </div>
 
+            {inquiryInstrumentName && (
+              <div className="mb-3 p-2 bg-teal-50 border border-teal-200 rounded text-xs text-teal-900 font-medium">
+                Inquiring regarding: <span className="font-bold">{inquiryInstrumentName}</span>
+              </div>
+            )}
+
             <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed">
-              Connect directly via our work requests bot for platform integrations, factory pricing, instrument lead times, or commercial web adaptations.
+              Connect directly via our work requests bot for platform specifications, pricing inquiries, instrument lead times, or commercial integrations.
             </p>
 
             <div className="bg-gray-50 border border-gray-200 rounded p-3 text-xs mb-5 space-y-2.5 text-gray-700">
@@ -166,18 +167,6 @@ export function App() {
             >
               Open @Slava_Dev_bot in Telegram (Sole Contact) ↗
             </a>
-
-            <div className="text-center mt-3">
-              <button
-                onClick={() => {
-                  setIsTelegramModalOpen(false);
-                  setActiveTab('contact');
-                }}
-                className="text-xs text-gray-500 hover:text-navy-900 underline py-1"
-              >
-                Or view procurement contact page
-              </button>
-            </div>
           </div>
         </div>
       )}
