@@ -11,14 +11,14 @@
       left: 0;
       right: 0;
       z-index: 2147483647;
-      font-family: "Times New Roman", Times, Georgia, serif !important;
+      font-family: "Times New Roman", Times, Baskerville, Georgia, serif !important;
       box-sizing: border-box;
       pointer-events: auto;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
     }
     #dev-demo-banner-root * {
       box-sizing: border-box;
-      font-family: "Times New Roman", Times, Georgia, serif !important;
+      font-family: "Times New Roman", Times, Baskerville, Georgia, serif !important;
     }
     .dev-demo-banner-bar {
       background: rgba(15, 23, 42, 0.94);
@@ -45,16 +45,15 @@
     .dev-demo-banner-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      background: rgba(234, 179, 8, 0.2);
-      border: 1px solid rgba(234, 179, 8, 0.45);
       color: #fde047;
       font-weight: 700;
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 6px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
       white-space: nowrap;
       flex-shrink: 0;
     }
@@ -62,9 +61,7 @@
       color: #cbd5e1;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-size: 14px;
-      line-height: 1.45;
-      font-family: "Times New Roman", Times, Georgia, serif !important;
+      font-size: 13.5px;
     }
     .dev-demo-banner-text strong {
       color: #ffffff;
@@ -124,11 +121,11 @@
       -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(234, 179, 8, 0.4);
       color: #fde047;
-      font-family: "Times New Roman", Times, Georgia, serif !important;
+      font-family: "Times New Roman", Times, Baskerville, Georgia, serif !important;
       font-size: 12px;
       font-weight: 600;
       padding: 7px 12px;
-      border-radius: 6px;
+      border-radius: 9999px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
       cursor: pointer;
       display: none;
@@ -152,8 +149,7 @@
         justify-content: space-between;
       }
       .dev-demo-banner-text {
-        font-size: 13px;
-        font-family: "Times New Roman", Times, Georgia, serif !important;
+        font-size: 12px;
       }
     }
   `;
